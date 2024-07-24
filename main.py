@@ -59,7 +59,7 @@ def main():
     print(prompt)
 
     tools = [PythonREPLTool()]
-    llm = ChatOpenAI(model="gpt-4o", temperature=0)
+    llm = ChatOpenAI(model="gpt-4", temperature=0)
 
     agent = create_react_agent(prompt=prompt, llm=llm, tools=tools)
 
@@ -67,7 +67,7 @@ def main():
 
     res = agent_executor.invoke(
         {
-            "input": """generate and save in current working directory 15 QRcodes
+            "input": """generate and save in current working directory 2 QRcodes
                                 that point to www.udemy.com/course/langchain, you have qrcode package installed already"""
         }
     )
